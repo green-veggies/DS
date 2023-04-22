@@ -1,5 +1,5 @@
 
-// Traversal in Array
+// Traversal in an Array
 
 #include<stdio.h>
 int main()

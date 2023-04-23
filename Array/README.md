@@ -7,5 +7,5 @@
 - For accessing particular element : array_name[index_num].
 - If array is created but has no value then it will store garbage value.
 
-#Traversal
+#Traversal#
 - TRAVERSING : visiting every element in array and printing those elements

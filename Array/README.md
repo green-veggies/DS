@@ -7,5 +7,11 @@
 - For accessing particular element : array_name[index_num].
 - If array is created but has no value then it will store garbage value.
 
-#Traversal#
-- TRAVERSING : visiting every element in array and printing those elements
+# Traversal
+- Traversing : visiting every element in array and printing those elements
+
+# Insertion
+- There is no upper bound check in array so if the insertion is crossing the size that has to be fixed by programmer.
+- For this if else statement is used:
+     - `if` size greater than **upperbound limit** print **overflow**
+     - `else` insert 

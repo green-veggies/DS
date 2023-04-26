@@ -26,55 +26,29 @@ int main()
     return 0;
 }*/
 
-// #include<stdio.h>
-// int main()
-// {
-//     int x,pos,arr[50],size;
-//     printf("Enter size of array :");
-//     scanf("%d",&size);
-//     printf("Enter elements in array");
-//     for(int i=0;i<=size-1;i++){
-//         scanf("%d",&arr[i]);
-//     }
-//     if(size>=50)
-//     printf("Stack Overflow");
-//     else{
-//         printf("Enter position :");
-//         scanf("%d",&pos);
-//         printf("enter element :");
-//         scanf("%d",&x);
-//         for(int i=size-1;i>=pos-1;i--){
-//             arr[i+1]=arr[i];
-//         }
-//         arr[pos-1]=x;
-//         size++;
-//         for(int i=0;i<=size-1;i++)
-//         printf("%d ",arr[i]);
-//     }
-//     return 0;
-// }
-
 #include<stdio.h>
 int main()
 {
-    int n;
+    int x,pos,arr[50],size;
     printf("Enter size of array :");
-    scanf("%d",&n);
-    int arr[50];
-    printf("Enter elements :");
-    for(int i=0;i<=n-1;i++){
+    scanf("%d",&size);
+    printf("Enter elements in array");
+    for(int i=0;i<=size-1;i++){
         scanf("%d",&arr[i]);
     }
-    // INSERTING AT THE END //
-    int x;
-    printf("Enter element you want to insert :");
-    scanf("%d",&x);
-    n++;
-    arr[n-1]=x;
-    
-
-    printf("Array is :");
-    for(int i=0;i<=n-1;i++){
+    if(size>=50)
+    printf("Stack Overflow");
+    else{
+        printf("Enter position :");
+        scanf("%d",&pos);
+        printf("enter element :");
+        scanf("%d",&x);
+        for(int i=size-1;i>=pos-1;i--){
+            arr[i+1]=arr[i];
+        }
+        arr[pos-1]=x;
+        size++;
+        for(int i=0;i<=size-1;i++)
         printf("%d ",arr[i]);
     }
     return 0;

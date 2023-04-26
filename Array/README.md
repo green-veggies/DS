@@ -16,6 +16,7 @@
      - `if` size greater than **upperbound limit** print **overflow**
      - `else` insert 
 
+``` 
  #include <stdio.h>
  #define MAX_SIZE 100
  int main() {
@@ -56,6 +57,7 @@
     printf("\n");
     return 0;
  } 
+ ```
 
 - The program first declares an array arr of maximum size MAX_SIZE and initializes variables size, pos, and num. The program then prompts the user to input the size of the array and the array elements. It then prompts the user to input the position at which the element is to be inserted and the number to be inserted.
 
@@ -65,7 +67,7 @@ Note that the program assumes that the user inputs a valid position between 1 an
 
 ### Array at beginning ###
 
-`
+```
     #include <stdio.h>
     #define MAX_SIZE 100 // Define the maximum size of the array
     int main() {
@@ -105,11 +107,11 @@ Note that the program assumes that the user inputs a valid position between 1 an
 
     return 0;
     }
-`
+```
 
 ### Array at the end ###
 
-`
+```
     #include<stdio.h>
     int main()
     {
@@ -127,12 +129,55 @@ Note that the program assumes that the user inputs a valid position between 1 an
         scanf("%d",&x);
         n++;
         arr[n-1]=x;
-
-
         printf("Array is :");
         for(int i=0;i<=n-1;i++){
             printf("%d ",arr[i]);
         }
         return 0;
-}`
+}
+```
 - For inserting in the back of the array. The array wil remain same we just have to increase the size of the array and enter the element
+
+# Deletion #
+
+- For deletion we will simply run `if-else` statement where `if` postion entered is greater than size of array or less equal to zero then `printf("INVALID INPUT");`
+     - else we will run a for loop :
+         - This for loop is shifting all the elements of the array to the left by one position starting
+        from the position `p-1` (since array indexing starts from 0) and ending at the last position
+        `n-1`. This effectively deletes the element at position `p` by overwriting it with the next
+        element in the array.
+
+```
+// Deletion from user given position//
+
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter size of array :");
+    scanf("%d",&n);
+    int arr[50];
+    printf("Enter elements in an array :");
+    for(int i=0;i<=n-1;i++)
+    scanf("%d",&arr[i]);
+
+    // Deletion from position p //
+    int p;
+    printf("Enter position from where you want to delete :");
+    scanf("%d",&p);
+    if (p>=n || p<=0){
+        printf("INVALID INPUT");
+    }
+    else{
+        for(int i=p-1;i<=n-1;i++){
+            arr[i]=arr[i+1];
+        }
+        n--;
+        printf("Array = ");
+        for(int i=0;i<=n-1;i++){
+            printf("%d ",arr[i]);
+        }
+    }
+    return 0;
+}
+```

@@ -16,10 +16,8 @@
      - `if` size greater than **upperbound limit** print **overflow**
      - `else` insert 
 
-`#include <stdio.h>
-
+#include <stdio.h>
 #define MAX_SIZE 100
-
 int main() {
     int arr[MAX_SIZE], size, pos, num;
 
@@ -56,9 +54,8 @@ int main() {
         printf("%d ", arr[i]);
     }
     printf("\n");
-
     return 0;
-}`
+}
 - The program first declares an array arr of maximum size MAX_SIZE and initializes variables size, pos, and num. The program then prompts the user to input the size of the array and the array elements. It then prompts the user to input the position at which the element is to be inserted and the number to be inserted.
 
 The program then shifts the elements of the array to the right from the specified position to the end of the array to make space for the new element. Finally, the program inserts the new element at the specified position and prints the updated array.

@@ -5,8 +5,9 @@
 int arr[3][4]; // 2D array
 int (*ptr)[4]; // pointer to a 1D array of size 4
 ptr = arr; // assign the address of the first row to the pointer
+
 ```
-      Here, `ptr` is a pointer to a 1D array of size 4. The size of the array must be specified in the pointer declaration, which is `4` in this case since each row in the 2D array has 4 elements.
+Here, `ptr` is a pointer to a 1D array of size 4. The size of the array must be specified in the pointer declaration, which is `4` in this case since each row in the 2D array has 4 elements.
 
 ### Accessing element in 2D array ###
 ```

@@ -1,8 +1,5 @@
 .vscode
 1_Array/*.exe
 2D_Array_pointer/*.exe
-<<<<<<< HEAD
-=======
-3_Linked_List
->>>>>>> 44f000e1aa7f2d44d68a5755bd80477da2fd7bf4
+Linkedlist/*.exe
 DynamicMA/*.exe

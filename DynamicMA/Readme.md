@@ -81,7 +81,7 @@ free(ptr);
 ptr = NULL;
 ```
 
-## realoc() ##
+## realloc() ##
 * `realloc()` is a function in the C programming language that is used to dynamically allocate or reallocate memory at runtime. It allows you to resize the memory block that was previously allocated using `malloc()`, `calloc()`, or `realloc()`.
 
 The syntax for `realloc()` function is:

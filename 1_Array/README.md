@@ -63,7 +63,7 @@
 
 The program then shifts the elements of the array to the right from the specified position to the end of the array to make space for the new element. Finally, the program inserts the new element at the specified position and prints the updated array.
 
-Note that the program assumes that the user inputs a valid position between 1 and size+1 inclusive. It also assumes that the array is not already full, and the new element will fit within the array bounds.And for checking this we can add `if-else` as mentioned above and in [This program](https://github.com/green-veggies/DS/blob/master/Array/2_insertion.c).
+Note that the program assumes that the user inputs a valid position between 1 and size+1 inclusive. It also assumes that the array is not already full, and the new element will fit within the array bounds.And for checking this we can add `if-else` as mentioned above and in [This program](https://github.com/green-veggies/DS/blob/master/1_Array/2_insertion.c).
 
 ### Array at beginning ###
 

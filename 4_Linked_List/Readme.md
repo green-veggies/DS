@@ -158,3 +158,35 @@ int add(struct Node *p)
         return add(p->next)+p->data;
 }
 ```
+### Maximum element ###
+- As we know the logic of finding a maximum number, we will define an integer variable `max=MIN_INT` and it will iterate and compare with data of every node and it will take the value which will be greater than `max`
+```
+int max(struct Node *p)
+{
+    int m=MIN_INT;
+    while(p)
+    {
+        if(p->data>m){
+            m=p->data;
+        }
+        p=p->next;
+    }
+    return m;
+}
+```
+- Using recursion
+```
+int max(struct Node *p)
+{
+    int x=0;
+    if(p==0)
+        return MIN_INT;
+    else{
+        x=max(p->next);
+        if(x>p->data)
+            return x;
+        else
+            return p->data;
+    }
+}
+```

@@ -82,7 +82,7 @@ display(struct Node *p)
 }
 ```
 ## Counting Nodes ##
-- For this first we will define a integer variable `count=0` and it will increase with +1 as p will move to next node till the pointer will have a null value.
+- For this first we will define an integer variable `count=0` and it will increase with +1 as p will move to next node till the pointer will have a null value.
 - We can do this by defining a function.
 ```
 int counting(struct Node *p)

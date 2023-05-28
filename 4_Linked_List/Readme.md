@@ -225,4 +225,64 @@ first=t;
 
 ### Insertion at given position ###
 
-- Let us insert at position 4
+- Let us insert after position 4
+    - We will take `pos=4`
+    - We will create a `new Node` and insert it after pos=4
+    - The New node create will have some data in it and it will point to the next node which is 5th node in this case.
+    - And the previous Node will point on this new node instead of 5th node.
+
+```
+Node *t=new Node;
+t->data=x;
+p=first;
+for(int i=0;i<pos-1;i++)
+{
+    p=p->next;
+}
+t->next=p->next;
+p->next=t;
+```
+### We can insert at any position using this function ###
+
+void Insert(int pos,int x)
+{
+    struct Node *t,*p;
+    if(pos==0)
+    {
+        t=new Node;
+        t->data=x;
+        t->next=first;
+        first=t;
+    }
+    else if(pos>0)
+    {
+        p=first;
+        for(int i=0;i < pos-1 && p;i++)
+            p=p->next;
+        if(p)
+        {
+            t=new Node;
+            t->data=x;
+            t->next=p->next;
+            p->next=t;
+        }
+    }
+}
+- The function Insert takes two parameters: `pos` (position) and `x `(value to be inserted).
+- It creates a new node `t` to hold the `data` and initialize its data value with `x`.
+- If `pos` is `0`, it means the node should be inserted at the beginning of the linked list.
+    - It assigns the next pointer of the new node (`t->next`) to point to the current first node (`first`).
+    - Then it updates the `first` pointer to point to the new node (`t`), making it the new first node of the linked list.
+- If `pos` is greater than `0`, it means the node should be inserted at a specific position in the linked list.
+    - It starts by assigning the `first` pointer to the temporary pointer `p`.
+    - It then traverses the linked list using a `for` loop until it reaches the node just before the desired position (`pos-1`) or the end of the list (`p `becomes `NULL`).
+    - If a valid position is reached, it creates the new node `t` with the data value `x`
+    - It assigns the `next` pointer of `t` to point to the node that was originally at the desired position (`p->next`).
+    - Finally, it updates the `next` pointer of the previous node (`p->next`) to point to the new node `t`, effectively inserting it into the linked list.
+
+
+
+
+
+
+    

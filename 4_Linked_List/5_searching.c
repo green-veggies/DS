@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -6,6 +7,7 @@ struct Node
     int data;
     struct Node *next;
 }*first=NULL;
+
 // Function to create linked list from an array
 void create(int A[],int n)
 {
@@ -24,22 +26,7 @@ void create(int A[],int n)
         last=tmp;
     }
 }
-// Max element
-// int Max(struct Node *p)
-// {
-//     int max=-32768;
-//     while(p)
-//     {
-//         if(p->data>max)
-//         {
-//             max=p->data;
-//         }
-//         p=p->next;
-//     }
-//     return max;
-// }
 
-// Using recursion
 int Max(struct Node *p)
 {
     int x=0;
@@ -50,13 +37,32 @@ int Max(struct Node *p)
         return x;
     else return p->data;
 }
-
-
+// Searching an Element
+struct Node * search(struct Node *p,int key)
+{
+    while(p!=NULL)
+    {
+        if(key==p->data)
+            return p;
+        p=p->next;
+    }
+    return NULL;  
+}
 
 int main()
 {
+    int x;
+    printf("enter a number you want to search:");
+    scanf("%d",&x);
+    struct Node *temp;
+
     int A[]={3,5,7,10,15,8,12,2};
     create(A,8);
-    printf("maximum element is %d\n",Max(first));
+    temp=search(first,x);
+    if(temp){
+        printf("Key found successfully : %d",temp->data);
+    }
+    else
+        printf("Key not found");
     return 0;
 }

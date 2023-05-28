@@ -190,3 +190,39 @@ int max(struct Node *p)
     }
 }
 ```
+### Searching an element ###
+
+- We use Linear search for searching a linked list.
+    - Binary search is not suitable for a linked list.
+- Let us define a function 
+```
+void search(struct Node* p,int key)
+while(p!=NULL)
+{
+    if(key==p->data)
+        return p;
+    p=p->next;
+}
+return NULL;
+```
+And also in main function we will define a new node `temp` and a new variable `x` which will pass through the function and provide the favourable results.
+
+## Insertion ##
+- There are 2 types of insertion:
+    - Insertion at beginning.
+    - Insertion after another node.
+
+### Insertion at beginning ###
+- First of all we will create a new node and insert a data in it. That new node will point to the `firstnode` and then move `first` from `firstnode` to `newnode`.
+
+A new node will be created
+```
+Node *t= new Node;
+t->data=x;
+t->next=first;
+first=t;
+```
+
+### Insertion at given position ###
+
+- Let us insert at position 4

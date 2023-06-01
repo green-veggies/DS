@@ -63,6 +63,65 @@ S->size=5;
 S->top = -1;
 S->arr=(int*)malloc(sizeof(int));
 ```
-The function
+We will declare a function push()
+```
+void push(struct stack *ptr,int value)
+{
+    if(isFull(ptr)){
+        printf("STACK OVERFLOW\n");
+    }
+    else{
+        ptr->top++;
+        ptr->arr[ptr->top]=value;
+    }
+}
+```
+ * The function "push" adds a value to the top of a stack if it is not already full.
+ *  `ptr` a pointer to the stack structure
+ *  `value` The value to be pushed onto the stack.
 
+- For Pop()
+```
+int pop(struct stack *ptr)
+{
+    if(isEmpty(ptr)){
+        printf("Stack Underflow");
+        return -1;
+    }
+    else{
+        int val=ptr->arr[ptr->top];
+        ptr->top--;
+        return val;
+    }
+}
+```
+ * This function pops an element from the top of a stack and returns its value.
+ *  `ptr` A pointer to a struct stack, which represents the stack data structure.
+ * `return` the integer value that was popped from the stack.
 
+ ### Peek ###
+
+ It refers to looking for the element at a specific index in a stack. 
+ - Peek operation requires the user to give a position to peek at as well. Here, position refers to the distance of the current index from the top element +1.
+
+ `top-i+1;`
+
+```
+int peek(struct stack *s, int i)
+{
+    int arrInd = s->top - i + 1;
+    if (s->top - i + 1 < 0)
+    {
+        printf("Enter a valid position");
+    }
+    else
+    {
+        return s->arr[arrInd];
+    }
+}
+```
+ 
+ * The function "peek" returns the value of an element in a stack at a specified position. 
+ *  `s` a pointer to a stack structure
+ *  `i` The parameter "i" in the "peek" function is the position of the element that we want to peek in the stack. It represents the distance of the element from the top of the stack. For example,if `i=1` we want to peek the top element of the stack, if  `return` the element at the i-th position from the top of the stack.
+ 

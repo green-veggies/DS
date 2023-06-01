@@ -53,3 +53,16 @@ S.top=-1;
 S.arr=(int*)malloc(S.size*sizeof(int));
 ```
 
+- For Push()
+```
+struct stack *S;
+S=(struct stack*)malloc(sizeof(struct stack));
+
+
+S->size=5;
+S->top = -1;
+S->arr=(int*)malloc(sizeof(int));
+```
+The function
+
+

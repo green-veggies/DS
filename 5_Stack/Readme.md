@@ -124,4 +124,146 @@ int peek(struct stack *s, int i)
  * The function "peek" returns the value of an element in a stack at a specified position. 
  *  `s` a pointer to a stack structure
  *  `i` The parameter "i" in the "peek" function is the position of the element that we want to peek in the stack. It represents the distance of the element from the top of the stack. For example,if `i=1` we want to peek the top element of the stack, if  `return` the element at the i-th position from the top of the stack.
- 
+
+### Time complexities of other operations: ###
+
+- isEmpty(): This operation just checks if the top member equals -1. This works in a constant time, hence, O(1).
+- isFull(): This operation just checks if the top member equals size -1. Even this works in a constant time, hence, O(1).
+- push(): Pushing an element in a stack needs you to just increase the value of top by 1 and insert the element at the index. This is again a case of O(1).
+- pop(): Popping an element in a stack needs you to just decrease the value of top by 1 and return the element we ignored. This is again a case of O(1).
+- peek(): Peeking at a position just returns the element at the index, (top - position + 1), which happens to work in a constant time. So, even this is an example of O(1).
+*So, basically all the operations we discussed follow a constant time complexity*
+
+The below function is used to display the topmost element of Stack
+```
+int stackTop(struct stack* sp){
+    return sp->arr[sp->top];
+}
+```
+And similarly below function is used to display the bottom-most element in Stack
+```
+int stackBottom(struct stack* sp){
+    return sp->arr[0];
+}
+```
+
+# Implementation of Stack using Linked List #
+
+- One side will be used for `push` and `pop` operations 
+- Head of linked list can be considered as `top`
+- Stack is empty when (`top==NULL;`)
+
+
+- Push()
+
+
+ ```
+ void push(int x)
+ {
+    node *t = newnode;
+    if(t==NULL)
+        printf("Stack Overflow");
+    else{
+        t->data=x;
+        t->next=top;
+        top=t;
+    }
+ }
+ ```
+ - Pop()
+
+ ```
+ int pop()
+ {
+    node *p;
+    int x=-1;
+    if(top==NULL)
+        printf("Stack is Empty");
+    else{
+        p=top;
+        top=top->next;
+        x=p->data;
+        free(p);
+    }
+    return x;
+ }
+ ```
+ - Peek()
+
+ ```
+ int peek(int pos)
+ {
+    int x=-1;
+    node *p=top;
+    for(int i=0;p!=NULL && i<pos-1;i++);
+        p=p->next;
+    if(p!=NULL)
+        return p->data;
+    else 
+        return -1;
+ }
+ ```
+ - Stack_top()
+ ```
+ {
+    if(top)
+        return top->data;
+    return -1;
+ }
+ ```
+
+ - isFull()
+
+ ```
+ int isFull() {
+    node *t=newnode;
+    int r=t ? 1 : 0;
+    free(t);
+    return r;
+ }
+ ```
+
+ - isEmpty()
+
+ ```
+ int isEmpty()
+ {
+    return top ? 0 : 1;
+ }
+ ```
+
+## Parenthesis Matching ##
+- Here expressions are given and we have to look whether the parenthesis are balanced or not.
+` ((a+b)*(c-d))`
+For opening parenthesis there must be a closing parenthesis.
+- We can take a stack
+    - If there is opening bracket thwn `push()` it into stack
+    - ignore symbols like `a,+,b`
+    - On getting a closing bracket `pop()` the opening bracket from the stack.
+    - ignore `*,c,-,d` and `pop()`out the bracket from the stack.
+
+- If after all scaning the stack is not empty i.e. there is opening bracket in stack 
+                 or
+- If at the end a closing bracket is there but stack is empty then also parenthesis are not balanced.
+
+We can define a function
+```
+int parenthesisMatch(char* exp)
+{
+   struct stack *s;
+   // create the stack
+   for(int i=;exp[i]!='\0';i++){
+        if(exp[i]=='('){
+            push(s,exp[i]);
+        }
+        else if(exp[i]==')'){
+            if(isEmpty(s)){
+                return 0;
+            }
+            pop(s);
+        }
+   }
+   if(isEmpty(s)) return 1;
+   else return 0;
+}
+```

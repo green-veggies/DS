@@ -65,7 +65,7 @@ int main()
 
 
                 // printing the values from the stack
-    for (int j = 1; j <= S->top + 1; j++)
+    for (int j =1 ; j <= S->top+1; j++)
     {
         printf("The value at position %d is %d\n", j, peek(S, j));
     }

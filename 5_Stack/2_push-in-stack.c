@@ -19,7 +19,7 @@ void push(struct stack *ptr,int value)
 }
 
 int isEmpty(struct stack *ptr){
-    if(ptr==-1){
+    if(ptr-> top == -1){
         return 1;
     }
     else{
